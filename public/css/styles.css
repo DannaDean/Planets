@@ -1,0 +1,574 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --main-dark-color: rgb(13,25,41);
+    --main-light-color: rgb(176,194,225);
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("https://images.unsplash.com/photo-1476504825079-f50520ac761d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80");
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* heder */
+
+header {
+    height: 100px;
+    width: 100vw;
+    /* border-bottom: 1px solid rgba(176,194,225, 0.2); */
+    position: relative;
+}
+
+header span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #171618, #FFC837);
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+header .header-container {
+    max-width: calc(1200px - 30px);
+    padding: 15px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo a {
+    color: rgb(176,194,225);
+    font-size: 24px;
+}
+
+header .logo img {
+    width: 50px;
+}
+
+header nav {
+    display: flex;
+    gap: 25px;
+}
+
+header nav a {
+    color: var(--main-light-color);
+    font-size: 18px;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+header nav a::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2%;
+    border-radius: 20px;
+    background-color: #f9c05f;
+    top: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+header nav a:hover {
+    color: #f9c05f;
+}
+
+header nav a:hover::before {
+    /* bottom: -2px; */
+    top: 0;
+     transition: all 0.5s ease-in-out;
+}
+
+/*------------------ index page ----------------*/
+
+.main-container {
+    max-width: calc(1200px - 30px);
+    padding: 70px 15px;
+    margin: 0 auto;
+}
+
+.main-container h1 {
+    font-size: 48px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    line-height: 0.70em;
+}
+
+.sun-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 70px 0 50px;
+}
+
+.sun-container .sun {
+    height: 120px;
+    width: 120px;
+    background: radial-gradient(circle at bottom center, #FFC837 15px, #FF8008);
+    border-radius: 50%;
+    box-shadow: -4px 2px 56px #f9c05f;
+}
+
+.planets-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.planets-container .planet {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.37);
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.planets-container .planet a{
+    font-size: 24px;
+    margin-bottom:  35px;
+    color: var(--main-light-color);
+}
+
+.planets-container .planet p,
+.planet-description p {
+    font-size: 18px;
+    color: var(--main-light-color);
+}
+
+.planets-container .planet span,
+.planet-description span{
+    font-weight: 600;
+    margin-right: 15px;
+    color: rgb(95,122,168);
+}
+
+/*--------------- separat planet -------------------*/
+
+.separat-planet-container {
+    max-width: calc(1200px - 30px);
+    padding: 70px 15px;
+    margin: 0 auto;
+}
+
+.separat-planet-container h1 {
+    font-size: 48px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    line-height: 0.70em;
+}
+
+.round-planet {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 70px 0 50px;
+}
+
+/* rings */
+
+.rings{
+    position: relative;
+    display: inline-block;
+  }
+  
+.rings::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    border: 2px solid rgba(206,179,151, 0.6); 
+    border-radius: 50%;
+}
+
+/* ---- */
+
+/* planets */
+
+.separat-planet-container .earth {
+    background: linear-gradient(135deg, #049eca, #338415, #046494, #338415, #365d72, #365d72);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 2px 25px #049eca;
+}
+
+.separat-planet-container .saturn {
+    background: linear-gradient(135deg, #655b52 1%, #928577, #ceb397, #ceb397, #928577, #655b52 99%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 2px 25px #ceb397;
+}
+
+.separat-planet-container .mars {
+    background: linear-gradient(135deg, #471208 , #6a190a, #cf4219, #cf4219, #6a190a, #471208);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 2px 25px #cf4219;
+}
+
+.separat-planet-container .jupiter {
+    background: linear-gradient(135deg,  #f6ad61,#8f3511, #835f43, #f5ce94,#8f3511, #835f43, #f5ce94, #8f3511);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 2px 25px #f5ce94;
+}
+
+.separat-planet-container .proxima-centauri {
+    background: linear-gradient(135deg, #2a1815 , #6f4b3e, #f8a552, #f8a552, #6f4b3e, #2a1815);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 2px 25px #f8a552;
+}
+
+.separat-planet-container .mercury {
+    background: linear-gradient(135deg, #795a39 , #94543c, #d0a470, #d0a470, #94543c, #795a39);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 2px 25px #d0a470;
+}
+
+.separat-planet-container .venus {
+    background: linear-gradient(135deg, #c7553b, #d78d5c, #dba86f, #dba86f, #d78d5c, #c7553b);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 2px 25px #dba86f;
+}
+
+.separat-planet-container .uranus {
+    background: linear-gradient(135deg, #145c94, #2f5d76, #78a5cc, #78a5cc, #2f5d76, #145c94);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 2px 25px #78a5cc;
+}
+
+.separat-planet-container .neptune {
+    background: linear-gradient(135deg, #222c54, #425695, #6485de, #6485de, #425695, #222c54);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 2px 25px #78a5cc;
+}
+
+.separat-planet-container .kepler {
+    background: linear-gradient(135deg, #9b5c05, #bcbcac, #f0f3e9, #f0f3e9, #bcbcac, #9b5c05);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 2px 25px #f0f3e9;
+}
+
+.separat-planet-container .trappist {
+    background: linear-gradient(135deg, #2a3a44, #63726f, #aaaf8f, #aaaf8f, #63726f, #2a3a44);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 2px 25px #aaaf8f;
+}
+
+.separat-planet-container .hd {
+    background: linear-gradient(135deg, #213552, #3e619f, #accff2, #accff2, #3e619f, #213552);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 2px 25px #accff2;
+}
+
+
+/* ----------- */
+
+.planet-description {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.37);
+    letter-spacing: 0.8px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* button */
+
+.back-btn {
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.back-btn a,
+.add-btn button {
+    position: relative;
+    padding: 30px 60px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.4);
+    color: var(--main-light-color);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 60px;
+    overflow: hidden;
+}
+
+.back-btn a span:nth-child(1),
+.add-btn button span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #171618, #f9c05f);
+    animation: animate1 2s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.back-btn a span:nth-child(2),
+.add-btn button span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #171618, #f9c05f);
+    animation: animate2 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate2 {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.back-btn a span:nth-child(3),
+.add-btn button span:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to left, #171618, #f9c05f);
+    animation: animate3 2s linear infinite;
+}
+
+@keyframes animate3 {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.back-btn a span:nth-child(4),
+.add-btn button span:nth-child(4) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to top, #171618, #f9c05f);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate4 {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+
+/*--------------------- CMS -------------------------*/
+
+/* ----- Create ----- */
+
+.cms-container {
+    max-width: calc(1200px - 30px);
+    padding: 70px 15px;
+    margin: 0 auto;
+}
+
+.cms-container h1 {
+    font-size: 48px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    line-height: 0.70em;
+}
+
+.cms-container form {
+    width: 100%;
+    padding: 20px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.37);
+}
+
+.cms-container form .form-container {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.cms-container form .form-container .col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cms-container form .form-container .col input,
+.cms-container form .form-container .col textarea {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--main-light-color);
+    font-size: 18px;
+}
+
+.cms-container form .form-container .col input::placeholder,
+.cms-container form .form-container .col textarea::placeholder {
+    color: var(--main-light-color);
+    font-size: 18px;
+}
+
+.cms-container form .form-container .col  .input  {
+    width: 100%;
+    position: relative;
+}
+
+.cms-container form .form-container .col  .input::before  {
+    position: absolute;
+    content: '';
+    width: 95%;
+    height: 2%;
+    border-radius: 20px;
+    background-color: var(--main-light-color);
+    top: 100%;
+    left: 15px;
+    transition: all 0.5s ease-in-out;
+}
+
+.invalid-feedback {
+    color: #FF8008;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.add-btn {
+    display: flex;
+    margin: 50px 0 20px;
+    justify-content: center;
+}
+
+.add-btn button {
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.update {
+    color: #f9c05f;
+}
+
+.update:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer */
+
+footer {
+    padding: 50px 0;
+}
+
+footer p {
+    color: var(--main-light-color);
+    text-align: center;
+}
